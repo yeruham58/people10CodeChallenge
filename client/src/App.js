@@ -12,16 +12,16 @@ import UiUxDesignChallenge from "./componnents/uiUxDesign/UiUxDesignChallenge";
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
         <Navbar />
         <Route exact path="/" component={Landing} />
         <Route exact path="/etl-csv" component={EtlCallenge} />
         <Route exact path="/web-service" component={WebServiceChallenge} />
         <Route exact path="/js" component={JsEngineeringChallenge} />
         <Route exact path="/design" component={UiUxDesignChallenge} />
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -26,6 +26,22 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.order-item {
+  height: 50px;
+}
+
+.processing {
+  color: red;
+}
+
+.shipped {
+  color: blue;
+}
+
+.delivered {
+  color: green;
 }
 
 @keyframes App-logo-spin {

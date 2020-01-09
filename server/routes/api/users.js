@@ -15,8 +15,8 @@ router.post("/create", (req, res) => {
  * @desc Get user detailes
  * @access public
  */
-router.get("/users", (req, res) => {
-  console.log("gonna search for users");
+router.get("/", (req, res) => {
+  console.log("gonna get all users");
 });
 
 /**

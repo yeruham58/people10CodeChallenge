@@ -2,8 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
-const users = require("./routes/users");
-const csvMarge = require("./routes/csvMarge");
+const users = require("./routes/api/users");
+const csvMerge = require("./routes/api/csvMerge");
+const cors = require("cors");
+
+app.use(cors());
 
 //body parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +25,7 @@ app.use(bodyParser.json());
 
 //use Routes
 app.use("/api/users", users);
-app.use("/api/csv", csvMarge);
+app.use("/api/csv", csvMerge);
 
 const port = process.env.PORT || 5000;
 

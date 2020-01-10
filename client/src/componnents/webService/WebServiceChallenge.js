@@ -14,7 +14,6 @@ class WebServiceChallenge extends Component {
       .get("/api/customers")
       .then(res => {
         const customersJsonList = res.data;
-        console.log(customersJsonList);
         this.setState({ customersJsonList });
       })
       .catch(err => {

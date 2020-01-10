@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./componnents/layout/Navbar";
 import Landing from "./componnents/layout/Landing";
 import EtlCallenge from "./componnents/EtlCallenge";
-import WebServiceChallenge from "./componnents/WebServiceChallenge";
+import WebServiceChallenge from "./componnents/webService/WebServiceChallenge";
 import JsEngineeringChallenge from "./componnents/jsEngineering/JsEngineeringChallenge";
 import UiUxDesignChallenge from "./componnents/uiUxDesign/UiUxDesignChallenge";
 

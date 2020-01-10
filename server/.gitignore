@@ -5,8 +5,10 @@
 /.pnp
 .pnp.js
 /package-lock.json
-/keys.js
-./keys.js
+/config/keys.js
+/config/config.json
+/models
+/migrations
 
 # testing
 /coverage

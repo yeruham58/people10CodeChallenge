@@ -88,17 +88,17 @@ By pressing the merge button, Node js code will merge the csv files, and return 
 You can create, edit, delete, search and read all the cutomers in this page.
 (All the data here is from server, By searching it's gonna make a db query for the params was searched).
 
-![Alt text](./client/src/img/readmeImg/jsScreen.png "Title")
+![Alt text](./client/src/img/readmeImg/jsScreen.png "Web Service Engineering Challenge")
 
 ### JS Engineering Challenge
 
 All the data here is from the given json, By searching it's gonna manipulate given json and view.
 
-![Alt text](./client/src/img/readmeImg/profileScreen.png "Title")
+![Alt text](./client/src/img/readmeImg/webServiceScreen.png "JS Engineering Challenge")
 
 ### UI/UX Design Challenge
 
 In the customer profile it's only a designed page, In the customers dashboard, it's really works.
 (It's the same page as in Web Service Engineering Challenge)
 
-![Alt text](./client/src/img/readmeImg/webServiceScreen.png "Title")
+![Alt text](./client/src/img/readmeImg/profileScreen.png "UI/UX Design Challenge")

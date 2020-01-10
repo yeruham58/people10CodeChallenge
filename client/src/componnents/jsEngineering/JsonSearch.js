@@ -11,7 +11,6 @@ class JsonSearch extends Component {
       first_name: "",
       last_name: "",
       ip: ""
-      // filterdCustomers: this.props.customers
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -19,6 +18,7 @@ class JsonSearch extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    //This timeout is for update the state before filtering
     setTimeout(() => {
       const { id, email, first_name, last_name, ip } = this.state;
       const filterdList = this.props.customers.filter(
@@ -46,18 +46,18 @@ class JsonSearch extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-1"></div>
-          <div className="col-md-10" style={{ backgroundColor: "#a4c0f4" }}>
+          <div className="col-1"></div>
+          <div className="col-10" style={{ backgroundColor: "#a4c0f4" }}>
             <div className="row">
               <form
                 onSubmit={this.onSubmit}
-                className="col-md-12"
+                className="col-12"
                 style={{
                   padding: "0px",
                   height: "43px"
                 }}
               >
-                <div className="col-md-1 float-left" style={{ padding: "0px" }}>
+                <div className="col-1 float-left" style={{ padding: "0px" }}>
                   <TextFieldGroup
                     placeholder="id"
                     name="id"
@@ -66,7 +66,7 @@ class JsonSearch extends Component {
                     info=""
                   />
                 </div>
-                <div className="col-md-4 float-left" style={{ padding: "0px" }}>
+                <div className="col-4 float-left" style={{ padding: "0px" }}>
                   <TextFieldGroup
                     placeholder="email"
                     name="email"
@@ -76,7 +76,7 @@ class JsonSearch extends Component {
                     info=""
                   />
                 </div>
-                <div className="col-md-2 float-left" style={{ padding: "0px" }}>
+                <div className="col-2 float-left" style={{ padding: "0px" }}>
                   <TextFieldGroup
                     placeholder="First name"
                     name="first_name"
@@ -85,7 +85,7 @@ class JsonSearch extends Component {
                     info=""
                   />
                 </div>
-                <div className="col-md-2 float-left" style={{ padding: "0px" }}>
+                <div className="col-2 float-left" style={{ padding: "0px" }}>
                   <TextFieldGroup
                     placeholder="Last name"
                     name="last_name"
@@ -95,7 +95,7 @@ class JsonSearch extends Component {
                   />
                 </div>
 
-                <div className="col-md-3 float-left" style={{ padding: "0px" }}>
+                <div className="col-3 float-left" style={{ padding: "0px" }}>
                   <TextFieldGroup
                     placeholder="IP"
                     name="ip"

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Popup from "reactjs-popup";
+import axios from "axios";
 
 import TextFieldGroup from "../common/TextFieldGroup";
 import CreateAndEditForm from "./CreateAndEditForm";
@@ -16,33 +17,42 @@ class ServerSearch extends Component {
       ip: ""
     };
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+    this.searchCustomer = this.searchCustomer.bind(this);
+  }
+
+  searchCustomer(params) {
+    axios
+      .get("/api/customers", { params })
+      .then(res => {
+        this.props.updateCustomers(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-    //This timeout is for update the state before filtering
-    setTimeout(() => {
-      const { id, email, first_name, last_name, ip } = this.state;
-      const filterdList = this.props.customers.filter(
-        customer =>
-          (customer.id.toString() === id || !id) &&
-          (customer.email.indexOf(email) === 0 || !email) &&
-          (customer.first_name
-            .toLowerCase()
-            .indexOf(first_name.toLowerCase()) === 0 ||
-            !first_name) &&
-          (customer.last_name.toLowerCase().indexOf(last_name.toLowerCase()) ===
-            0 ||
-            !last_name) &&
-          (customer.ip.indexOf(ip) === 0 || !ip)
-      );
-      this.props.updateCustomers(filterdList);
-    }, 20);
   }
 
-  onSubmit(e) {
+  onSearch(e) {
+    const { id, first_name, last_name, email, ip } = this.state;
     e.preventDefault();
+    const params = {};
+    if (id) params.id = id;
+    if (first_name) params.first_name = this.nameFormat(first_name);
+    if (last_name) params.last_name = this.nameFormat(last_name);
+    if (email) params.email = email.toLowerCase();
+    if (ip) params.ip = ip;
+    this.searchCustomer(params);
+  }
+
+  nameFormat(name) {
+    return (
+      name.slice(0, 1).toUpperCase() +
+      name.slice(1, name.length).toLocaleLowerCase()
+    );
   }
 
   render() {
@@ -114,7 +124,11 @@ class ServerSearch extends Component {
                 />
               </div>
               <div className="col-1 float-left" style={{ padding: "0px" }}>
-                <button type="button" className="btn btn-primary mr-1">
+                <button
+                  type="button"
+                  className="btn btn-primary mr-1"
+                  onClick={this.onSearch}
+                >
                   <i className="fas fa-search"></i>
                 </button>
 

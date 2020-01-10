@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
   if (!req.body) {
     Customers.getAllCustomers().then(customers => res.json(customers));
   } else {
-    Customers.searchCustomers(req.body).then(customers => res.json(customers));
+    Customers.searchCustomers(req.query).then(customers => res.json(customers));
   }
 });
 

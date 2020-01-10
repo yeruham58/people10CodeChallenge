@@ -56,14 +56,22 @@ class CreateAndEditForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    const { first_name, last_name, email } = this.state;
     const submitedCustomer = {
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
-      email: this.state.email
+      first_name: this.nameFormat(first_name),
+      last_name: this.nameFormat(last_name),
+      email: email.toLowerCase()
     };
     this.props.customer
       ? this.updateCustomer(this.props.customer.id, submitedCustomer)
       : this.createCustomer(submitedCustomer);
+  }
+
+  nameFormat(name) {
+    return (
+      name.slice(0, 1).toUpperCase() +
+      name.slice(1, name.length).toLocaleLowerCase()
+    );
   }
 
   render() {

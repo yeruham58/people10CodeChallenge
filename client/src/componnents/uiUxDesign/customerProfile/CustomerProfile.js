@@ -13,7 +13,9 @@ export default class CustomerProfile extends Component {
         <Helmet>
           <title>Customer Profile - G4 UI/UX Challenge</title>
         </Helmet>
-        <h1 className="text-center mt-3 mb-2">Customer Profile</h1>
+        {/* <h2 className="text-center mt-3 mb-2">
+          <strong>Customer Profile</strong>{" "}
+        </h2> */}
 
         <div className="card card-body bg-light mb-3">
           <div className="row">

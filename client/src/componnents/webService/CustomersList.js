@@ -47,11 +47,21 @@ class CustomersList extends Component {
                     }`
                   }}
                 >
-                  <div className="col-md-1 mt-4"> {customer.id}</div>
-                  <div className="col-md-2 mt-4"> {customer.first_name}</div>
-                  <div className="col-md-2 mt-4"> {customer.last_name}</div>
-                  <div className="col-md-3 mt-4"> {customer.email}</div>
-                  <div className="col-md-3 mt-4"> {customer.ip}</div>
+                  <div className="col-md-1 mt-4" style={{ color: "red" }}>
+                    <strong>{customer.id}</strong>
+                  </div>
+                  <div className="col-md-2 mt-4">
+                    <strong>{customer.first_name}</strong>{" "}
+                  </div>
+                  <div className="col-md-2 mt-4">
+                    <strong>{customer.last_name}</strong>{" "}
+                  </div>
+                  <div className="col-md-3 mt-4">
+                    <strong>{customer.email}</strong>{" "}
+                  </div>
+                  <div className="col-md-3 mt-4">
+                    <strong>{customer.ip}</strong>{" "}
+                  </div>
 
                   <div className="col-md-1">
                     <Popup

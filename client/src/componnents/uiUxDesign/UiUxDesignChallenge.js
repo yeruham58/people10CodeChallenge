@@ -15,12 +15,11 @@ class UiUxDesignChallenge extends Component {
     return (
       <div>
         <div className="container">
-          <div className="row">
+          <div className="row mb-3">
             <button
               className={`btn ${
                 this.state.profile ? "btn-outline-info" : "btn-light"
               } col-md-6`}
-              // style={{ width: "100%" }}
               onClick={() => {
                 this.setState({
                   profile: true,
